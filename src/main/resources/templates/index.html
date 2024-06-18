@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="app-title">ToDo App</h1>
+
+<div class="form-container">
+    <form class="article-form" th:action="@{/createToDo}" method="post">
+        <div class="form-group">
+            <label for="nameDescription">Název:</label>
+            <input type="text" id="nameDescription" name="nameDescription" required />
+        </div>
+        <div class="form-group">
+            <label for="deadLine">Deadline:</label>
+            <input type="date" id="deadLine" name="deadLine" required />
+        </div>
+
+        <button type="submit">Add ToDo</button>
+    </form>
+</div>
+
+<table class="todo-table">
+    <thead>
+    <tr>
+        <th>Název</th>
+        <th>Deadline</th>
+        <th>Datum</th>
+        <th>🗑️</th>
+        <th>🔄</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.nameDescription}">Název</td>
+        <td>
+        <span th:if="${todo.isDone}" class="completed">
+            &#10004; <!-- Fajfka -->
+        </span>
+            <span th:unless="${todo.isDone}" class="completed2">
+            <!-- Pokud není hotovo, můžete zde zobrazit něco jiného -->
+             &#10060;
+        </span>
+        <td th:text="${todo.daadline}">Datum</td>
+        <td>
+            <form th:action="@{/deleteToDo}" method="POST">
+                <input type="hidden" name="toDoId" th:value="${todo.id}" />
+                <button type="submit">Vymazat</button>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/changeStatus}" method="POST">
+                <input type="hidden" name="toDoId" th:value="${todo.id}" />
+                <button type="submit">Změnit status</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
