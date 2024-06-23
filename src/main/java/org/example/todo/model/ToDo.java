@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.todo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,11 +19,13 @@ public class ToDo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String nameDescription;
+    private String name;
     private LocalDate daadline;
     private boolean inProgress;
     private boolean isDone;
     private LocalDate finishDate;
+
+
 
     public boolean isDown() {
         return isDone;
@@ -35,5 +37,9 @@ public class ToDo {
 
     public void changeStatus() {
         isDone = !isDone;
+    }
+
+    public  boolean isNull() {
+        return  (name == null || daadline == null || id == null);
     }
 }

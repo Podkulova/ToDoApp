@@ -12,8 +12,8 @@
 <div class="form-container">
     <form class="article-form" th:action="@{/createToDo}" method="post">
         <div class="form-group">
-            <label for="nameDescription">Název:</label>
-            <input type="text" id="nameDescription" name="nameDescription" required />
+            <label for="name">Název:</label>
+            <input type="text" id="name" name="name" required />
         </div>
         <div class="form-group">
             <label for="deadLine">Deadline:</label>
@@ -36,7 +36,7 @@
     </thead>
     <tbody>
     <tr th:each="todo : ${todos}">
-        <td th:text="${todo.nameDescription}">Název</td>
+        <td th:text="${todo.getName}">Název</td>
         <td>
         <span th:if="${todo.isDone}" class="completed">
             &#10004; <!-- Fajfka -->

@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.todo.service;
 
 import org.springframework.stereotype.Service;
 
@@ -6,5 +6,6 @@ import java.time.LocalDate;
 
 @Service
 public interface ToDoService {
-    void createToDo(String nameDescription, LocalDate deadLine);
+     void createToDo(String name, LocalDate deadLine);
+
 }
