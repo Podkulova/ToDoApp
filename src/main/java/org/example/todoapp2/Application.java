@@ -1,4 +1,4 @@
-package org.example.todo;
+package org.example.todoapp2;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @Slf4j
-public class ToDoApplication {
+public class Application {
 
     public static void main(String[] args) {
-
-        SpringApplication.run(ToDoApplication.class, args);
+        SpringApplication.run(Application.class, args);
         log.info("Aplikace běží na adrese: http://localhost:8080/");
     }
+
 }

@@ -1,14 +1,12 @@
-package org.example.todo.controller;
+package org.example.todoapp2.controller;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.todo.service.implementation.ToDoServiceImpl;
+import org.example.todoapp2.service.implementation.ToDoServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.example.todo.service.ToDoService;
 
 import java.time.LocalDate;
 

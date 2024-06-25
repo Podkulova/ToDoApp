@@ -1,4 +1,4 @@
-package org.example.todo.model;
+package org.example.todoapp2.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

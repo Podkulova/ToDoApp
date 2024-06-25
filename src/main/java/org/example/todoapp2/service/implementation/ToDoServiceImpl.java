@@ -1,13 +1,13 @@
-package org.example.todo.service.implementation;
+package org.example.todoapp2.service.implementation;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.todo.exception.InvalidParamsExeption;
-import org.example.todo.exception.InvalidStatusExeption;
-import org.example.todo.exception.TodoNotFoundExeption;
-import org.example.todo.model.ToDo;
+import org.example.todoapp2.exception.InvalidParamsExeption;
+import org.example.todoapp2.exception.InvalidStatusExeption;
+import org.example.todoapp2.exception.TodoNotFoundExeption;
+import org.example.todoapp2.model.ToDo;
+import org.example.todoapp2.repository.ToDoRepository;
+import org.example.todoapp2.service.ToDoService;
 import org.springframework.stereotype.Service;
-import org.example.todo.repository.ToDoRepository;
-import org.example.todo.service.ToDoService;
 
 import java.time.LocalDate;
 import java.util.List;

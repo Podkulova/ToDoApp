@@ -1,4 +1,4 @@
-package org.example.todo.exception;
+package org.example.todoapp2.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
