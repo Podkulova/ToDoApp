@@ -1,5 +1,5 @@
 FROM gradle:8.8-jdk21-alpine AS build
-COPY src/main .
+COPY . .
 RUN ./gradlew build --no-daemon
 
 FROM amazoncorretto:21-al2023-headless
