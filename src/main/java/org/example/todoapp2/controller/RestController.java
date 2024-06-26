@@ -40,7 +40,7 @@ public class RestController {
     @PatchMapping("/changeStatus")
     public ResponseEntity<String> changeStatus(@RequestParam Integer toDoId) {
         toDoService.changestatus(toDoId);
-        log.info("status je změněn");
+     //   log.info("status je změněn");
         return new ResponseEntity<>("Status je změněn", HttpStatus.OK);
     }
 }

@@ -34,28 +34,28 @@ public class ToDoController {
                                   @RequestParam LocalDate deadLine) {
 
         toDoService.createToDo(name, deadLine);
-        log.info(String.format("Uživatel vvtvořil todo s názvem '%s'", name));
+       // log.info(String.format("Uživatel vvtvořil todo s názvem '%s'", name));
         return "redirect:/";
     }
 
     @GetMapping
     public String allToDos(Model model) {
         model.addAttribute("todos", toDoService.gettAllToDoes());
-        log.info(String.format("Uživatel právě vytvořil stránku"));
+     //   log.info(String.format("Uživatel právě vytvořil stránku"));
         return "index";
     }
 
     @PostMapping("/deleteToDo")
     public String deleteToDo(@RequestParam Integer toDoId) {
         toDoService.deleteToDo(toDoId);
-        log.info(String.format("Uživatel vymazal todo s id '%s'", toDoId));
+      //  log.info(String.format("Uživatel vymazal todo s id '%s'", toDoId));
         return "redirect:/";
     }
 
     @PostMapping("/changeStatus")
     public String changeStatus(@RequestParam Integer toDoId) {
         toDoService.changestatus(toDoId);
-        log.info(String.format("Uživatel změnil status todo s id '%s'", toDoId));
+      //  log.info(String.format("Uživatel změnil status todo s id '%s'", toDoId));
         return "redirect:/";
     }
 }
